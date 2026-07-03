@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Home from "../pages/Home/Home";
 import Historia from "../pages/Historia/Historia";
@@ -7,9 +7,10 @@ import Comunicados from "../pages/Comunicados/Comunicados";
 import Contacto from "../pages/Contacto/Contacto";
 import Login from "../pages/Login/Login";
 import Usuarios from "../pages/Usuarios/Usuarios";
+
 function AppRoutes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,7 +22,7 @@ function AppRoutes() {
           <Route path="/usuarios" element={<Usuarios />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

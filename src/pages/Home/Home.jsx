@@ -1,4 +1,5 @@
 import "./Home.css";
+import fundador from "../../assets/images/fundador.png";
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
         <h1>ANTECEDENTES HISTÓRICOS</h1>
 
         <img
-          src="/src/assets/images/fundador.png"
+          src={fundador}
           alt="Carlos Medinaceli"
           className="founder-img"
         />
