@@ -1,0 +1,41 @@
+.sidebar {
+  background: #111;
+  border: 2px solid #c99424;
+}
+
+.sidebar h3 {
+  background: linear-gradient(#f3cf63, #c99424);
+  color: #111;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.sidebar a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: white;
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  font-weight: bold;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: linear-gradient(#f3cf63, #c99424);
+  color: #111;
+}
+
+.gold-news {
+  margin: 14px;
+  min-height: 110px;
+  border: 1px solid #c99424;
+  color: #f2c14e;
+  padding: 15px;
+}
+
+.gold-news span {
+  display: block;
+  text-align: right;
+  margin-top: 35px;
+}

@@ -1,0 +1,88 @@
+.usuarios-page {
+  min-height: 560px;
+  background: #f7f7f7;
+}
+
+.usuarios-title {
+  background: linear-gradient(#07303b, #02171d);
+  color: #f2c14e;
+  padding: 12px 18px;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 3px solid #c99424;
+}
+
+.usuarios-content {
+  padding: 25px;
+}
+
+.usuarios-form {
+  background: white;
+  padding: 22px;
+  border-top: 6px solid #c99424;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.usuarios-form input,
+.usuarios-form select {
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.usuarios-form button {
+  width: 190px;
+  background: linear-gradient(#f3cf63, #c99424);
+  color: #111;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.usuarios-list {
+  display: grid;
+  gap: 16px;
+}
+
+.usuario-card {
+  background: white;
+  padding: 18px;
+  border-left: 7px solid #c99424;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.13);
+}
+
+.usuario-card h3 {
+  color: #07252d;
+  margin-bottom: 8px;
+}
+
+.usuario-card p {
+  margin-bottom: 8px;
+}
+
+.usuario-actions {
+  margin-top: 14px;
+}
+
+.usuario-actions button {
+  background: #c99424;
+  color: white;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.usuario-actions .delete {
+  background: #b91c1c;
+}

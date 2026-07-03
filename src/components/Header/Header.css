@@ -1,0 +1,28 @@
+.top-header {
+  position: relative;
+  height: 210px;
+  border-bottom: 3px solid #c99424;
+  overflow: hidden;
+  background: #000;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-link {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: linear-gradient(#f9d96b, #c99424);
+  color: #111;
+  padding: 11px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #ffe28a;
+}

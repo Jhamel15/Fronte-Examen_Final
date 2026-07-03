@@ -1,0 +1,95 @@
+.comunicados-page {
+  min-height: 560px;
+  background: #f7f7f7;
+}
+
+.comunicados-title {
+  background: linear-gradient(#07303b, #02171d);
+  color: #f2c14e;
+  padding: 12px 18px;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 3px solid #c99424;
+}
+
+.comunicados-content {
+  padding: 25px;
+}
+
+.comunicados-form {
+  background: white;
+  padding: 22px;
+  border-top: 6px solid #c99424;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.comunicados-form input,
+.comunicados-form textarea,
+.comunicados-form select {
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.comunicados-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.comunicados-form button {
+  width: 220px;
+  background: linear-gradient(#f3cf63, #c99424);
+  color: #111;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comunicados-list {
+  display: grid;
+  gap: 16px;
+}
+
+.comunicado-card {
+  background: white;
+  padding: 18px;
+  border-left: 7px solid #c99424;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.13);
+}
+
+.comunicado-card h3 {
+  color: #07252d;
+  margin-bottom: 8px;
+}
+
+.comunicado-card p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.comunicado-actions {
+  margin-top: 14px;
+}
+
+.comunicado-actions button {
+  background: #c99424;
+  color: white;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.comunicado-actions .delete {
+  background: #b91c1c;
+}
