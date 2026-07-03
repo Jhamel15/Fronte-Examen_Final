@@ -12,8 +12,9 @@ function Contacto() {
   const [form, setForm] = useState({
     nombre: "",
     correo: "",
-    telefono: "",
+    asunto: "",
     mensaje: "",
+    fecha: "",
   });
   const [editId, setEditId] = useState(null);
 
@@ -35,7 +36,13 @@ function Contacto() {
       await crearContacto(form);
     }
 
-    setForm({ nombre: "", correo: "", telefono: "", mensaje: "" });
+    setForm({
+      nombre: "",
+      correo: "",
+      asunto: "",
+      mensaje: "",
+      fecha: "",
+    });
     setEditId(null);
     cargarContactos();
   };
@@ -45,8 +52,9 @@ function Contacto() {
     setForm({
       nombre: contacto.nombre || "",
       correo: contacto.correo || "",
-      telefono: contacto.telefono || "",
+      asunto: contacto.asunto || "",
       mensaje: contacto.mensaje || "",
+      fecha: contacto.fecha || "",
     });
   };
 
@@ -81,9 +89,16 @@ function Contacto() {
 
           <input
             type="text"
-            placeholder="Teléfono"
-            value={form.telefono}
-            onChange={(e) => setForm({ ...form, telefono: e.target.value })}
+            placeholder="Asunto"
+            value={form.asunto}
+            onChange={(e) => setForm({ ...form, asunto: e.target.value })}
+            required
+          />
+
+          <input
+            type="date"
+            value={form.fecha}
+            onChange={(e) => setForm({ ...form, fecha: e.target.value })}
           />
 
           <textarea
@@ -102,12 +117,9 @@ function Contacto() {
           {contactos.map((contacto) => (
             <div className="contacto-card" key={contacto.id}>
               <h3>{contacto.nombre}</h3>
-              <p>
-                <strong>Correo:</strong> {contacto.correo}
-              </p>
-              <p>
-                <strong>Teléfono:</strong> {contacto.telefono}
-              </p>
+              <p><strong>Correo:</strong> {contacto.correo}</p>
+              <p><strong>Asunto:</strong> {contacto.asunto}</p>
+              <p><strong>Fecha:</strong> {contacto.fecha}</p>
               <p>{contacto.mensaje}</p>
 
               <div className="contacto-actions">

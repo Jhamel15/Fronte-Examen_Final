@@ -1,68 +1,61 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { listarUsuarios } from "../../services/usuarioService";
 import "./Login.css";
 
 function Login() {
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-  });
+  const navigate = useNavigate();
 
+  const [nombreUsuario, setNombreUsuario] = useState("");
+  const [password, setPassword] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-  const ingresar = async (e) => {
+  const iniciarSesion = async (e) => {
     e.preventDefault();
 
-    try {
-      const usuarios = await listarUsuarios();
+    const usuarios = await listarUsuarios();
 
-      const usuarioEncontrado = usuarios.find(
-        (u) =>
-          (u.username === form.username || u.usuario === form.username) &&
-          (u.password === form.password || u.contrasena === form.password)
-      );
+    const usuarioEncontrado = usuarios.find(
+      (u) =>
+        u.nombreUsuario === nombreUsuario &&
+        u.password === password &&
+        u.activo === true
+    );
 
-      if (usuarioEncontrado) {
-        localStorage.setItem("admin", JSON.stringify(usuarioEncontrado));
-        setMensaje("Acceso correcto");
-        window.location.href = "/usuarios";
-      } else {
-        setMensaje("Usuario o contraseña incorrectos");
-      }
-    } catch (error) {
-      setMensaje("Error al conectar con el backend");
-      console.error(error);
+    if (usuarioEncontrado) {
+      localStorage.setItem("usuario", JSON.stringify(usuarioEncontrado));
+      navigate("/");
+    } else {
+      setMensaje("Usuario o contraseña incorrectos");
     }
   };
 
   return (
     <div className="login-page">
-      <div className="section-title">LOGIN ADMINISTRADOR</div>
-
-      <div className="login-box">
+      <div className="login-container">
         <h2>Ingreso al sistema</h2>
 
-        <form onSubmit={ingresar}>
+        <form onSubmit={iniciarSesion}>
           <input
             type="text"
             placeholder="Usuario"
-            value={form.username}
-            onChange={(e) => setForm({ ...form, username: e.target.value })}
+            value={nombreUsuario}
+            onChange={(e) => setNombreUsuario(e.target.value)}
             required
           />
 
           <input
             type="password"
             placeholder="Contraseña"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
 
           <button type="submit">Ingresar</button>
         </form>
 
-        {mensaje && <p className="login-message">{mensaje}</p>}
+        {mensaje && <p className="error">{mensaje}</p>}
       </div>
     </div>
   );

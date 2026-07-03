@@ -10,9 +10,10 @@ import "./Usuarios.css";
 function Usuarios() {
   const [usuarios, setUsuarios] = useState([]);
   const [form, setForm] = useState({
-    username: "",
+    nombreUsuario: "",
     password: "",
     rol: "ADMIN",
+    activo: true,
   });
   const [editId, setEditId] = useState(null);
 
@@ -34,7 +35,12 @@ function Usuarios() {
       await crearUsuario(form);
     }
 
-    setForm({ username: "", password: "", rol: "ADMIN" });
+    setForm({
+      nombreUsuario: "",
+      password: "",
+      rol: "ADMIN",
+      activo: true,
+    });
     setEditId(null);
     cargarUsuarios();
   };
@@ -42,9 +48,10 @@ function Usuarios() {
   const editar = (usuario) => {
     setEditId(usuario.id);
     setForm({
-      username: usuario.username || "",
+      nombreUsuario: usuario.nombreUsuario || "",
       password: usuario.password || "",
       rol: usuario.rol || "ADMIN",
+      activo: usuario.activo ?? true,
     });
   };
 
@@ -64,8 +71,10 @@ function Usuarios() {
           <input
             type="text"
             placeholder="Nombre de usuario"
-            value={form.username}
-            onChange={(e) => setForm({ ...form, username: e.target.value })}
+            value={form.nombreUsuario}
+            onChange={(e) =>
+              setForm({ ...form, nombreUsuario: e.target.value })
+            }
             required
           />
 
@@ -85,6 +94,16 @@ function Usuarios() {
             <option value="USER">USER</option>
           </select>
 
+          <select
+            value={form.activo}
+            onChange={(e) =>
+              setForm({ ...form, activo: e.target.value === "true" })
+            }
+          >
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+          </select>
+
           <button type="submit">
             {editId ? "Actualizar usuario" : "Guardar usuario"}
           </button>
@@ -93,8 +112,9 @@ function Usuarios() {
         <div className="usuarios-list">
           {usuarios.map((usuario) => (
             <div className="usuario-card" key={usuario.id}>
-              <h3>{usuario.username}</h3>
+              <h3>{usuario.nombreUsuario}</h3>
               <p><strong>Rol:</strong> {usuario.rol}</p>
+              <p><strong>Estado:</strong> {usuario.activo ? "Activo" : "Inactivo"}</p>
 
               <div className="usuario-actions">
                 <button onClick={() => editar(usuario)}>Editar</button>

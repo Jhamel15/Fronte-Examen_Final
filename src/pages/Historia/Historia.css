@@ -1,0 +1,94 @@
+.historia-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.historia-hero {
+  background: linear-gradient(135deg, #0f172a, #c99424);
+  color: white;
+  padding: 50px 35px;
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.historia-hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.historia-hero p {
+  font-size: 18px;
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.historia-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.historia-card {
+  background: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+}
+
+.historia-card h2 {
+  color: #c99424;
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+
+.historia-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.valores {
+  grid-column: span 2;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.valores-grid span {
+  background: #e0ecff;
+  color: #c99424;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .historia-page {
+    padding: 20px;
+  }
+
+  .historia-content {
+    grid-template-columns: 1fr;
+  }
+
+  .valores {
+    grid-column: span 1;
+  }
+
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .historia-hero h1 {
+    font-size: 28px;
+  }
+}
